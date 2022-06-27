@@ -1,66 +1,70 @@
-var products = [
+const allProducts = [
  
  {id:1, name:"laptop", price:170000},
  {id:1, name:"car", price:160000},
  {id:1, name:"orange", price:180000},
  {id:1, name:"computer", price:290000}, 
  {id:1, name:"ball", price:140000},
- ]
-
-var userProducts = [
- 
- {name:"laptop", price:"170000",},
- {name:"car", price:"160000",},
- {name:"orange", price:"180000",},
- {name:"", price:"",},
  
  ]
- 
- 
- var user = prompt("please enter a product name")
- 
- var newProduct; 
- 
 
-var userLog = products.some(function(users){
+ 
+ const userBasket = [
+ 
+ 
+ 
+ ]
+ 
+const userProduct = prompt("enter the name")
+
+const requestProduct;
+
+
+const isInShop = allProducts.some(function(product){
     
-    if(users.name==user){
+    if(product.name==userProduct){
         
-        newProduct=users
+        requestProduct=product
         return true
+        
     }
     
     
 })
 
-
-if(userLog==true) {
+if(isInShop==true){
     
-    var userBasket = {
+    const newProduct = {
         
-        name:newProduct.name,
-        price:newProduct.price,
+        id:3,
+        name:requestProduct.name,
+        price:requestProduct.price,
         
         
     }
     
-    userProducts.push(userBasket)
+    userBasket.push(newProduct)
     
-    var sum = 0
+    const sum = 0
     
-    userProducts.forEach(function(pro){
+    userBasket.forEach(function(product){
         
-        sum = sum+pro.price
         
+        sum = sum + product.price
         
     })
     
-    console.log(userProducts)
-    alert("total price : " + sum)
+    
+    
+    console.log(userBasket)
+    
+   alert("your price: " + sum)
+    
     
 }else{
     
     
-    alert("not avaliable")
+    alert("no available")
+    
     
 }
